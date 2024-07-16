@@ -1,0 +1,23 @@
+# Ignore node_modules directory
+node_modules/
+
+# Ignore build artifacts
+# Ignore environment files
+.env
+
+# Ignore logs
+*.log
+
+# Ignore editor specific files
+.vscode/
+.idea/
+*.code-workspace
+
+# Ignore dependency lock files
+package-lock.json
+yarn.lock
+pnpm-lock.yaml
+
+# Ignore OS generated files
+.DS_Store
+Thumbs.db

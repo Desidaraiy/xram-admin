@@ -1,0 +1,39 @@
+@import "tailwind/_base.css";
+@import "tailwind/_components.css";
+@import "tailwind/_utilities.css";
+
+@import "_checkbox-radio-switch.css";
+@import "_progress.css";
+@import "_scrollbars.css";
+@import "_table.css";
+
+.chat-wrapper {
+    height: 80vh;
+}
+
+.chat-wrapper .message-container {
+position: relative;
+}
+
+.chat-wrapper .message-container::after {
+    content: "";
+    position: absolute;
+    bottom: -10px;
+    border-width: 10px;
+    border-style: solid;
+}
+
+.chat-wrapper .incoming-message::after {
+    border-color: transparent transparent #fff transparent;
+    left: 10px;
+}
+
+.chat-wrapper .outgoing-message::after {
+    border-color: transparent transparent #fff transparent;
+    right: 10px;
+}
+
+.animate-slide-up {
+    transform: translateY(-2%);
+    transition: transform 0.5s ease-out;
+}
