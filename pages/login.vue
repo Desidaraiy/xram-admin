@@ -12,7 +12,7 @@ import { useMainStore } from '@/stores/main.js'
 import { tokenCookieName, proxyBaseUrl } from '@/configs/fetchBaseUrl'
 
 const form = reactive({
-  phone: '',
+  username: '',
   password: ''
 })
 
@@ -23,44 +23,38 @@ const router = useRouter()
 const isButtonDisabled = ref(false)
 const isErrorModalActive = ref(false)
 
-const isPhoneValid = ref(true);
+const isUsernameValid = ref(true);
 const isPasswordValid = ref(true);
 
 const validationRules = {
-  phone: value => value.length === 11,
+  username: value => value.length === 11,
   password: value => value.length >= 1
 };
 
 watch(form, (newVal, oldVal) => {
-  isPhoneValid.value = validationRules.phone(newVal.phone);
+  isUsernameValid.value = validationRules.username(newVal.username);
   isPasswordValid.value = validationRules.password(newVal.password);
 }, { deep: true });
 
 const submit = async () => {
 
-  if(form.phone == '' || form.password == ''){
+  if(form.username == '' || form.password == ''){
     isErrorModalActive.value = true
     errorDialogText.value = 'Заполните все обязательные поля'
     return
   }
-
-  // if(!isPasswordValid.value || !isPhoneValid.value){
-  //   isErrorModalActive.value = true
-  //   errorDialogText.value = 'Проверьте телефон и пароль'
-  //   return
-  // }
   
   isButtonDisabled.value = true
-  const path = proxyBaseUrl+'login'
+  const path = proxyBaseUrl+'/login'
 
   await $fetch(path, {
     method: 'POST',
     body: form
   }).then(r => {
-    const resp = r.message
+    const resp = r.state
     isButtonDisabled.value = false
-    if(resp === 'ok'){ 
-      const { message, token } = r
+    if(resp === 'success'){ 
+      const { state, data: { token } } = r
       etoken.value = token
       router.push('/')
     }else{
@@ -92,7 +86,7 @@ const submit = async () => {
         :class="cardClass"
         class="max-h-screen overflow-y-auto"
         form
-        title="«Телеос-1» кабинет администратора"
+        title="«Вратарница» кабинет администратора"
         :headerIcon="mdiDoor"
         @submit.prevent="submit"
       >
@@ -102,7 +96,7 @@ const submit = async () => {
           :isValid="isPhoneValid"
         >
           <FormControl
-            v-model="form.phone"
+            v-model="form.username"
             :icon="mdiAccount"
             type="tel"
             name="login"

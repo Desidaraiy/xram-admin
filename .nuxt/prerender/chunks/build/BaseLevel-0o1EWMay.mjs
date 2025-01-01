@@ -1,4 +1,4 @@
-import { defineComponent, h, useSSRContext } from 'file:///Users/admin/work/teleos-admin/node_modules/vue/index.mjs';
+import { defineComponent, h, useSSRContext } from 'file:///Users/admin/work/xram-admin/node_modules/vue/index.mjs';
 
 const _sfc_main = defineComponent({
   name: "BaseLevel",

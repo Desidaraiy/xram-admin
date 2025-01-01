@@ -14,9 +14,9 @@ const year = computed(() => new Date().getFullYear())
     <BaseLevel>
       <div class="text-center md:text-left">
         <b>&copy;{{ year }}, <a
-          href="https://pushmobile.ru/"
+          href="https://vratarnica.ru/"
           target="_blank"
-        >pushmobile.ru</a></b>
+        >vratarnica.ru</a></b>
       </div>
     </BaseLevel>
   </footer>

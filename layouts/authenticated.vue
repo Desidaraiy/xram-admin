@@ -7,7 +7,7 @@ import {
   mdiLoading
 } from '@mdi/js'
 import { useRouter } from 'vue-router'
-// import menuAside from '@/configs/menuAside.js'
+import menuAside from '@/configs/menuAside.js'
 import menuNavBar from '@/configs/menuNavBar.js'
 import { useMainStore } from '@/stores/main.js'
 import { useLayoutStore } from '@/stores/layout.js'
@@ -34,8 +34,6 @@ router.beforeEach((to, from) => {
   layoutStore.isAsideMobileExpanded = false
   layoutStore.isAsideLgActive = false
 })
-
-const menuAside = computed(() => mainStore.allowedNavigation)
 
 const menuClick = (event, item) => {
   if (item.isToggleLightDark) {

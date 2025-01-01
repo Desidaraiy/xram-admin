@@ -3,7 +3,8 @@ node_modules/
 
 # Ignore build artifacts
 # Ignore environment files
-.env
+.output/
+.nuxt/
 
 # Ignore logs
 *.log

@@ -4,7 +4,7 @@ import { darkModeKey, styleKey } from '@/configs/config.js'
 
 useHead({
   titleTemplate: (titleChunk) => {
-    const titleBase = 'Телеос-1 Административная панель'
+    const titleBase = 'Вратарница Административная панель'
     
     return titleChunk ? `${titleChunk} - ${titleBase}` : titleBase
   }

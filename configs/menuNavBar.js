@@ -26,24 +26,16 @@ export default [
   //     }
   //   ]
   // },
-  {
-    isCurrentUser: true,
-    menu: [
-      {
-        icon: mdiAccount,
-        label: 'Администраторы',
-        to: '/admins'
-      },
-      {
-        isDivider: true
-      },
-      {
-        icon: mdiLogout,
-        label: 'Выйти',
-        isLogout: true
-      }
-    ]
-  },
+  // {
+  //   isCurrentUser: true,
+  //   menu: [
+  //     {
+  //       icon: mdiLogout,
+  //       label: 'Выйти',
+  //       isLogout: true
+  //     }
+  //   ]
+  // },
   {
     icon: mdiThemeLightDark,
     label: 'Темная/Светлая тема',

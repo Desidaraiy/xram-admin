@@ -2,7 +2,6 @@ import {
   mdiShieldAccount,
   mdiNotificationClearAll,
   mdiStar,
-  mdiAccountMultiplePlus
 } from '@mdi/js'
 
 export default [
@@ -12,18 +11,13 @@ export default [
     label: 'Клиенты'
   },
   {
-    to: '/pushmailing',
+    to: '/schedules',
     icon: mdiNotificationClearAll,
-    label: 'Рассылка'
+    label: 'Расписание'
   },
   {
-    to: '/advertising',
+    to: '/orders',
     icon: mdiStar,
-    label: 'Реклама'
-  },
-  {
-    to: '/groups',
-    label: 'Группы',
-    icon: mdiAccountMultiplePlus
+    label: 'Заказы'
   },
 ]
