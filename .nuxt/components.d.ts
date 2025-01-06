@@ -61,7 +61,7 @@ interface _GlobalComponents {
     'UserAvatar': typeof import("../components/UserAvatar.vue")['default']
     'UserAvatarCurrentUser': typeof import("../components/UserAvatarCurrentUser.vue")['default']
     'UserCard': typeof import("../components/UserCard.vue")['default']
-    'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome")['default']
+    'NuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'NuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'NuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
     'ClientOnly': typeof import("../node_modules/nuxt/dist/app/components/client-only")['default']
@@ -143,7 +143,7 @@ interface _GlobalComponents {
     'LazyUserAvatar': typeof import("../components/UserAvatar.vue")['default']
     'LazyUserAvatarCurrentUser': typeof import("../components/UserAvatarCurrentUser.vue")['default']
     'LazyUserCard': typeof import("../components/UserCard.vue")['default']
-    'LazyNuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome")['default']
+    'LazyNuxtWelcome': typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
     'LazyNuxtLayout': typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
     'LazyNuxtErrorBoundary': typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
     'LazyClientOnly': typeof import("../node_modules/nuxt/dist/app/components/client-only")['default']
@@ -166,14 +166,6 @@ interface _GlobalComponents {
     'LazyBody': typeof import("../node_modules/nuxt/dist/head/runtime/components")['Body']
     'LazyNuxtIsland': typeof import("../node_modules/nuxt/dist/app/components/nuxt-island")['default']
     'LazyNuxtRouteAnnouncer': IslandComponent<typeof import("../node_modules/nuxt/dist/app/components/server-placeholder")['default']>
-}
-
-declare module '@vue/runtime-core' {
-  export interface GlobalComponents extends _GlobalComponents { }
-}
-
-declare module '@vue/runtime-dom' {
-  export interface GlobalComponents extends _GlobalComponents { }
 }
 
 declare module 'vue' {
@@ -239,7 +231,7 @@ export const TableSampleGroups: typeof import("../components/TableSampleGroups.v
 export const UserAvatar: typeof import("../components/UserAvatar.vue")['default']
 export const UserAvatarCurrentUser: typeof import("../components/UserAvatarCurrentUser.vue")['default']
 export const UserCard: typeof import("../components/UserCard.vue")['default']
-export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome")['default']
+export const NuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const NuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const NuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
 export const ClientOnly: typeof import("../node_modules/nuxt/dist/app/components/client-only")['default']
@@ -321,7 +313,7 @@ export const LazyTableSampleGroups: typeof import("../components/TableSampleGrou
 export const LazyUserAvatar: typeof import("../components/UserAvatar.vue")['default']
 export const LazyUserAvatarCurrentUser: typeof import("../components/UserAvatarCurrentUser.vue")['default']
 export const LazyUserCard: typeof import("../components/UserCard.vue")['default']
-export const LazyNuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome")['default']
+export const LazyNuxtWelcome: typeof import("../node_modules/nuxt/dist/app/components/welcome.vue")['default']
 export const LazyNuxtLayout: typeof import("../node_modules/nuxt/dist/app/components/nuxt-layout")['default']
 export const LazyNuxtErrorBoundary: typeof import("../node_modules/nuxt/dist/app/components/nuxt-error-boundary")['default']
 export const LazyClientOnly: typeof import("../node_modules/nuxt/dist/app/components/client-only")['default']

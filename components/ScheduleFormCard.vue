@@ -9,6 +9,7 @@ const { $moment } = useNuxtApp()
 
 const props = defineProps({
   form: Object,
+  id: Number,
   visibleBlocks: {
     type: Number,
     default: 2,
@@ -98,10 +99,19 @@ const clearForm = () => {
 
 const submitForm = async () => {
   isButtonDisabled.value = true
+  const schedule = JSON.parse(mainStore.getScheduleById(props.id).body)
+
+  const originalDay = schedule.find((item) => item.id == props.form.id)
+
+  Object.assign(originalDay, props.form)
+  
   try {
     await $fetch(proxyBaseUrl + '/schedules/update', {
       method: 'POST',
-      body: props.form,
+      body: {
+        id: props.id,
+        body: schedule
+      },
       headers: {
         'Authorization': 'Bearer ' + mainStore.userToken
       },

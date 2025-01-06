@@ -59,9 +59,6 @@
       "@vue/compiler-sfc": [
         "../node_modules/@vue/compiler-sfc"
       ],
-      "@vue/runtime-dom": [
-        "../node_modules/@vue/runtime-dom"
-      ],
       "vue-router": [
         "../node_modules/vue-router"
       ],
@@ -103,9 +100,6 @@
       ],
       "public/*": [
         "../public/*"
-      ],
-      "pinia": [
-        "../node_modules/pinia/dist/pinia"
       ],
       "#vue-router": [
         "./vue-router"

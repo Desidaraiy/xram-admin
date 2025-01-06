@@ -1,24 +1,19 @@
 <script setup>
-import { reactive, onBeforeMount, onActivated } from 'vue'
+import { reactive, onMounted } from 'vue'
 import {
-  mdiNotificationClearAll
+  mdiArrowLeft
 } from '@mdi/js'
 import SectionMain from '@/components/SectionMain.vue'
 import { useMainStore } from '~~/stores/main'
+import { useRoute } from 'vue-router'
+
+const route = useRoute();
 
 const mainStore = useMainStore()
 
-onBeforeMount(() => {
-  mainStore.getScheduleList()
-})
+const schedule = computed(() => JSON.parse(mainStore.getScheduleById(route.params.id).body))
 
-onActivated(() => {
-  mainStore.getScheduleList()
-})
-
-const schedules = computed(() => mainStore.schedules)
-
-const forms = reactive(schedules.value.map(form => ({
+const forms = reactive(schedule.value.map(form => ({
   id: form.id || 0,
   saints: form.saints || '',
   time_1: form.time_1 || '',
@@ -33,8 +28,8 @@ const forms = reactive(schedules.value.map(form => ({
   description_5: form.description_5 || '',
 })))
 
-watch(schedules, () => {
-  forms.splice(0, forms.length, ...schedules.value.map(form => ({ ...form })))
+watch(schedule.value, () => {
+  forms.splice(0, forms.length, ...schedule.value.map(form => ({ ...form })))
 })
 
 </script>
@@ -44,8 +39,9 @@ watch(schedules, () => {
     <NuxtLayout name="authenticated">
       <SectionMain>
         <SectionTitleLineWithButton
-          :icon="mdiNotificationClearAll"
+          :icon="mdiArrowLeft"
           title="Расписание служений"
+          :back="true"
           main
         >
           <BaseButton
@@ -58,6 +54,7 @@ watch(schedules, () => {
           <ScheduleFormCard
           v-for="(form, index) in forms"
           :key="index"
+          :id="$route.params.id"
           :form="form"/>
         </div>
         <div v-else>

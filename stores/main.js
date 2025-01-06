@@ -131,7 +131,11 @@ export const useMainStore = defineStore('main', {
         }
       })
     },
-
+    getScheduleById(id){
+      
+      const schedule = this.schedules.find((item) => item.id == id);
+      return schedule
+    },
     async updateSchedule(payload){
       console.log('updating')
       const path = proxyBaseUrl+'/schedules/update'
